@@ -33,8 +33,5 @@ public class MaxHeapMaker {
         return input;
     }
 
-    public static void main(String[] args) {
-        int[] myInts = {6, 2, 4, 17, 5, 13, 1};
-        heapify(myInts);
-    }
+   
 }
