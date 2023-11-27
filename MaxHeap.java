@@ -22,7 +22,7 @@ public class MaxHeap {
         int root = data[0]; //set root variable to first index
         data[0] = data[data.length-1]; //set last index as the new "root"
         data = Arrays.copyOf(data, data.length-1); //resize array to remove the last index
-        heapify(data); //re-sort array
+        MaxHeapMaker.heapify(data); //re-sort array
         
         return root; //return the root that was removed
     }
