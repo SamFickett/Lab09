@@ -1,4 +1,5 @@
 package Lab9;
+import java.util.Arrays;
 
 public class MaxHeap {
     private int[] data;
@@ -18,11 +19,12 @@ public class MaxHeap {
      */
     public int delete()
     {
-        // Your codes goes here
+        int root = data[0]; //set root variable to first index
+        data[0] = data[data.length-1]; //set last index as the new "root"
+        data = Arrays.copyOf(data, data.length-1); //resize array to remove the last index
+        heapify(data); //re-sort array
         
-        
-        // You should change this line and return the max value
-        return 0;
+        return root; //return the root that was removed
     }
     
     /**
