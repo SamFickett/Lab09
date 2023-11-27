@@ -34,6 +34,16 @@ public class MaxHeap {
     public void add(int newData)
     {
         // Your code goes here
+    	// Creator: Samuel Fickett
+    	int[] addData = new int[data.length + 1];
+    	for (int i = 0; i < data.length; ++i) {
+    		addData[i] = data[i];
+    		if (i + 1 == data.length) {
+    			addData[i + 1] = newData;
+    		}
+    	}
+    	data = addData;
+    	setData(data); //Applies change to the heap
     }
 
     /**
