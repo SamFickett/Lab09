@@ -1,4 +1,5 @@
 package Lab9;
+import java.util.Arrays;
 
 public class MaxHeap {
     private int[] data;
@@ -18,11 +19,12 @@ public class MaxHeap {
      */
     public int delete()
     {
-        // Your codes goes here
+        int root = data[0]; //set root variable to first index
+        data[0] = data[data.length-1]; //set last index as the new "root"
+        data = Arrays.copyOf(data, data.length-1); //resize array to remove the last index
+        MaxHeapMaker.heapify(data); //re-sort array
         
-        
-        // You should change this line and return the max value
-        return 0;
+        return root; //return the root that was removed
     }
     
     /**
@@ -32,6 +34,16 @@ public class MaxHeap {
     public void add(int newData)
     {
         // Your code goes here
+    	// Creator: Samuel Fickett
+    	int[] addData = new int[data.length + 1];
+    	for (int i = 0; i < data.length; ++i) {
+    		addData[i] = data[i];
+    		if (i + 1 == data.length) {
+    			addData[i + 1] = newData;
+    		}
+    	}
+    	data = addData;
+    	setData(data); //Applies change to the heap
     }
 
     /**
